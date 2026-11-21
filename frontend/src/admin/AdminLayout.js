@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
-  FiBarChart2, FiBox, FiDollarSign, FiGrid, FiHome, FiImage, FiLayers, FiLogOut, FiMail, FiMenu, FiMessageSquare, FiPackage,
+  FiBarChart2, FiBox, FiDollarSign, FiGrid, FiHome, FiImage, FiLayers, FiLogOut, FiMenu, FiMessageSquare, FiPackage,
   FiPercent, FiSettings, FiShoppingCart, FiStar, FiTag, FiTruck, FiUser, FiUsers, FiX,
 } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
