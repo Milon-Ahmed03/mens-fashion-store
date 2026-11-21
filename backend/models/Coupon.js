@@ -1,0 +1,18 @@
+const mongoose = require('mongoose');
+
+const couponSchema = new mongoose.Schema(
+  {
+    code: { type: String, required: true, unique: true, uppercase: true, trim: true },
+    type: { type: String, enum: ['percent', 'fixed'], default: 'percent' },
+    value: { type: Number, required: true, min: 0 },
+    minOrder: { type: Number, default: 0 },
+    maxDiscount: { type: Number, default: 0 }, // শুধু percent কুপনের জন্য, 0 = সীমা নেই
+    usageLimit: { type: Number, default: 0 }, // 0 = সীমাহীন
+    usedCount: { type: Number, default: 0 },
+    expiresAt: { type: Date },
+    isActive: { type: Boolean, default: true },
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model('Coupon', couponSchema);
