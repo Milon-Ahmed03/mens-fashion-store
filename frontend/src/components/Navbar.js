@@ -47,7 +47,10 @@ export default function Navbar() {
         <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
-        <Link to="/" className="font-display text-xl font-bold tracking-tight sm:text-2xl">{settings.storeName}</Link>
+        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight sm:text-2xl">
+          <img src="/logo-icon.png" alt={settings.storeName} className="h-9 w-9 sm:h-10 sm:w-10" />
+          <span>{settings.storeName}</span>
+        </Link>
 
         <nav className="ml-6 hidden items-center gap-6 lg:flex">
           <NavLink to="/" end className={linkClass}>Home</NavLink>

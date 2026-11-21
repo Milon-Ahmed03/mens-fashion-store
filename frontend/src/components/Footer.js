@@ -10,7 +10,12 @@ export default function Footer() {
     <footer className="mt-20 bg-ink text-gray-300">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <h3 className="font-display text-xl font-bold text-white">{settings.storeName}</h3>
+
+          <div className="flex items-center gap-2">
+            <img src="/logo-icon.png" alt={settings.storeName} className="h-9 w-9" />
+            <h3 className="font-display text-xl font-bold text-white">{settings.storeName}</h3>
+          </div>
+
           <p className="mt-3 text-sm">{settings.tagline}</p>
           <div className="mt-4 flex gap-3">
             {settings.facebook && <a href={settings.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="rounded-full bg-white/10 p-2 hover:bg-brand"><FaFacebookF /></a>}
