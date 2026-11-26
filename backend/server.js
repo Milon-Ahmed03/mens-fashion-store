@@ -17,6 +17,7 @@ connectDB();
 require('./config/firebaseAdmin'); // Firebase চালু করে
 
 const app = express();
+app.set('trust proxy', 1);
 app.use(cors({ origin: (process.env.CLIENT_URL || '').split(',').map((s) => s.trim()), credentials: true }));
 app.use(express.json({ limit: '2mb' }));
 
@@ -36,6 +37,7 @@ app.use('/api/settings', require('./routes/settingsRoutes'));
 app.use('/api/contact', require('./routes/contactRoutes'));
 app.use('/api/upload', require('./routes/uploadRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/chat', require('./routes/chatRoutes'));
 
 app.use(notFound);
 app.use(errorHandler);

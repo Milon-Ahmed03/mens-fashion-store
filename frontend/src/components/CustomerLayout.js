@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ChatWidget from './ChatWidget';
 
 export default function CustomerLayout() {
   const { pathname } = useLocation();
@@ -16,6 +17,7 @@ export default function CustomerLayout() {
         <Outlet />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
